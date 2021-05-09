@@ -1,14 +1,20 @@
 import { Component, Fragment } from 'react';
 import FormRegistry from './components/FormRegistry';
+import ValidacoesCadastro from './conetext/ValidacoesCadastro';
 
-import {validarCPF, validarSenha} from "./model/cadastro";
+import { validarCPF, validarSenha } from "./model/cadastro";
 
 class App extends Component {
   render() {
     return (
       <Fragment>
         <h1>Form Registry</h1>
-        <FormRegistry aoEnviar={aoEnviarForm} validacoes={{cpf:validarCPF, senha:validarSenha, nome:validarSenha}} />
+
+        <ValidacoesCadastro.Provider
+          value={{ cpf: validarCPF, senha: validarSenha, nome: validarSenha }} >
+          <FormRegistry aoEnviar={aoEnviarForm} />
+        </ValidacoesCadastro.Provider>
+
       </Fragment>
     );
   }

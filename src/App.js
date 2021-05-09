@@ -1,3 +1,4 @@
+import { Container } from '@material-ui/core';
 import { Component, Fragment } from 'react';
 import FormRegistry from './components/FormRegistry';
 import ValidacoesCadastro from './conetext/ValidacoesCadastro';
@@ -7,7 +8,7 @@ import { validarCPF, validarSenha } from "./model/cadastro";
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <Container component="article" maxWidth="sm">
         <h1>Form Registry</h1>
 
         <ValidacoesCadastro.Provider
@@ -15,7 +16,7 @@ class App extends Component {
           <FormRegistry aoEnviar={aoEnviarForm} />
         </ValidacoesCadastro.Provider>
 
-      </Fragment>
+      </Container>
     );
   }
 }

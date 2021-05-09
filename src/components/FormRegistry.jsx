@@ -3,12 +3,13 @@ import React, {useState} from 'react';
 
 function FormRegistry() {
     const [nome, setNome] = useState("");
-
+    const [sobrenome, setSobrenome] = useState("");
     return (
         <form onSubmit={(event) => {
             event.preventDefault();
             event.stopPropagation();
             console.log(nome);
+            console.log(sobrenome);
         }}>
             <TextField
                 value={nome}
@@ -22,6 +23,10 @@ function FormRegistry() {
                 fullWidth
             />
             <TextField
+                value={sobrenome}
+                onChange={event => {
+                    setSobrenome(event.target.value);
+                }}
                 id="sobrenome"
                 label="Sobrenome"
                 variant="outlined"

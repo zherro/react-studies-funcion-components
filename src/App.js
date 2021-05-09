@@ -1,9 +1,13 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
+import FormRegistry from './components/FormRegistry';
 
 class App extends Component {
   render() {
     return (
-      <h1>Form</h1>
+      <Fragment>
+        <h1>Form Registry</h1>
+        <FormRegistry />
+      </Fragment>
     );
   }
 }

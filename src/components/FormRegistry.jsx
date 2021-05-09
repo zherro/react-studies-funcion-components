@@ -4,7 +4,7 @@ import DadosUsuario from './DadosUsuario';
 import DadosEntrega from './DadosEntrega';
 import { Step, StepLabel, Stepper, Typography } from '@material-ui/core';
 
-function FormRegistry({ validarCPF, aoEnviar }) {
+function FormRegistry({ validacoes, aoEnviar }) {
 
     const [etapaAtual, setEtapaAtual] = useState(0);
     const [dadosColetados, setDados] = useState({});
@@ -16,9 +16,9 @@ function FormRegistry({ validarCPF, aoEnviar }) {
     })
 
     const formularios = [
-        <DadosUsuario aoEnviar={coletarDados} />,
-        <DadosPessoais aoEnviar={coletarDados} validarCPF={validarCPF} />,
-        <DadosEntrega aoEnviar={coletarDados} />,
+        <DadosUsuario aoEnviar={coletarDados}  validacoes={validacoes} />,
+        <DadosPessoais aoEnviar={coletarDados} validacoes={validacoes} />,
+        <DadosEntrega aoEnviar={coletarDados} validacoes={validacoes} />,
         <Typography variant="h5">Obrigado pelo cadastro</Typography>,
     ];
 

@@ -1,7 +1,7 @@
 import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 import React, { useState } from 'react';
 
-function FormRegistry() {
+function FormRegistry({aoEnviar}) {
     const [nome, setNome] = useState("");
     const [sobrenome, setSobrenome] = useState("");
     const [cpf, setCpf] = useState("");
@@ -13,7 +13,7 @@ function FormRegistry() {
         <form
             onSubmit={(event) => {
                 event.preventDefault();
-                // aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
+                aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
             }}
         >
             <TextField

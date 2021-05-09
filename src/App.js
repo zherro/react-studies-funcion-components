@@ -6,10 +6,14 @@ class App extends Component {
     return (
       <Fragment>
         <h1>Form Registry</h1>
-        <FormRegistry />
+        <FormRegistry aoEnviar={aoEnviarForm} />
       </Fragment>
     );
   }
+}
+
+function aoEnviarForm(dados) {
+  console.log(dados);
 }
 
 export default App;

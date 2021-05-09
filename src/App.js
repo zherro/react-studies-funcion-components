@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <Fragment>
         <h1>Form Registry</h1>
-        <FormRegistry aoEnviar={aoEnviarForm} />
+        <FormRegistry aoEnviar={aoEnviarForm} validarCPF={validarCPF} />
       </Fragment>
     );
   }
@@ -14,6 +14,14 @@ class App extends Component {
 
 function aoEnviarForm(dados) {
   console.log(dados);
+}
+
+function validarCPF(cpf){
+  if(cpf.length !== 11){
+    return {valido:false, texto:"CPF deve ter 11 digitos."}
+  }else{
+    return {valido:true, texto:""}
+  }
 }
 
 export default App;
